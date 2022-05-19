@@ -1,0 +1,9 @@
+@font-face {
+    font-family: sourcesanspro;
+    src: url(../fuentes/sourceSanspro/SourceSansPro-Light.ttf);
+}
+
+@font-face {
+    font-family: acme;
+    src: url(../fuentes/acme/Acme-Regular.ttf);
+}
