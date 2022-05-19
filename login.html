@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./styles/style.css">
-        <link rel="stylesheet" href="./js/validarRut.js">
         <script>
             $(function () {
                 $("#slideshow").slidesjs();
@@ -40,15 +39,18 @@
 
         <section id="wrap">
             <section id="main">
+
                <section class="form-login">
                 <h5>Formulario Login</h5>
-                <input type="text" class="controls" placeholder="Ingrese RUT" aria-describedby="sizing-addon1" id="txt_rut" >
+                <input type="text" class="controls"id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT" >
                 <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
-               <center>
-                <button id="btnvalida"  class="buttons" >Ingresar</button>
-               </center>
+
+              <div style="text-align: center;">
+                <button  class="buttons" type="submit">Ingresar</button>
+                <script src="./js/validarRut.js"></script>
+              </div>
+              
                 <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
-                <p class="text-info" id="msgerror"></p>
               </section>
             </section>
         </section>

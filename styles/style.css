@@ -250,8 +250,3 @@ header #subheader nav ul li a:hover {
 .form-login a:hover {
   text-decoration: underline;
 }
-
-#msgerror {
-	font-size:1.4em;
-    color: white;
-}

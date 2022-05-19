@@ -38,13 +38,15 @@
 
     <section id="wrap">
         <section id="main">
+            
                <section class="form-login">
                 <h5>Recuperar Contraseña</h5>
-                <input class="controls" type="text" name="rut" value="" placeholder="Rut de Usuario">
+                <input type="text" class="controls"id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT" >
                 <input class="controls" type="password" name="contrasena" value="" placeholder="Nueva Contraseña">
-               <center>
-                <input class="buttons" type="submit" name="" value="Cambiar Contraseña">
-               </center>
+               <div style="text-align: center;">
+                <button  class="buttons" type="submit">Cambiar Contraseña</button>
+                <script src="./js/validarRut.js"></script>
+              </div>
                 <p><a href="login.html">Volver Inicio De Sesion</a></p>
             </section>
         </section>
