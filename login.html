@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/validarRut.js">
         <script>
             $(function () {
                 $("#slideshow").slidesjs();
@@ -17,7 +18,9 @@
           background-repeat: no-repeat;
           background-size: cover;
         }
-      </style>            <div class="contenedor">
+      </style>      
+
+       <div class="contenedor">
                 <header>
                     <div id="subheader">
                         <div id="logotipo">
@@ -31,22 +34,22 @@
                             </ul>
                         </nav>
                     </div>
-
                 </header>
 
+        </div>
 
-
-                <section id="wrap">
-                    <section id="main">
-
-                           <section class="form-login">
-                            <h5>Formulario Login</h5>
-                            <input class="controls" type="text" name="rut" value="" placeholder="Rut">
-                            <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
-                           <center>
-                            <input class="buttons p pointer" type="submit" name="" value="Ingresar">
-                           </center>
-                            <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
-                          </section>
+        <section id="wrap">
+            <section id="main">
+               <section class="form-login">
+                <h5>Formulario Login</h5>
+                <input  class="controls"  type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT">
+                <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+               <center>
+                <input class="buttons" type="submit" name="" value="Ingresar">
+               </center>
+                <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
+              </section>
+            </section>
+        </section>
 
 </html>

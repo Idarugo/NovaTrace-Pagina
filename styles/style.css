@@ -2,7 +2,6 @@
 @import url("fuentes.css");
 
 
-
 /*--- ESTILOS GENERALES---*/
 body {
     background: #c9c8c8;
@@ -109,9 +108,7 @@ header #subheader nav ul li a:hover {
     float: left;
 }
 
-
 /*Imagen Movimiento*/
-
 .banner{
     width: 920px;
     height: 260px;
@@ -135,7 +132,7 @@ header #subheader nav ul li a:hover {
         opacity: 0.1;
     }
     35%, 65% {
-        background-image: url(https://saludresponde.minsal.cl/wp-content/uploads/2021/11/banner-vacunacion-especial-contra-el-covid19.png);
+        background-image: url(../imagen/banner2.png);
         opacity: 1;
     }
     66%, 69% {
@@ -143,7 +140,7 @@ header #subheader nav ul li a:hover {
     }
     70%, 100% {
         opacity: 1;
-        background-image: url(https://blogs.iadb.org/agua/wp-content/uploads/sites/8/2020/03/WWD2020_Banner1-V01_FB-LI-1200x628-SPA-1024x536.jpg);
+        background-image: url(../imagen/banner3.jpg);
     }
 }
 
@@ -155,42 +152,8 @@ header #subheader nav ul li a:hover {
     padding: 5px;
 }
 
-.slidesjs-previous.slidesjs-navigation {
-    visibility: hidden;
-    color: white;
-    padding: 5px;
-}
-
-.slidesjs-pagination {
-    margin: -16px auto;
-    width: 100px;
-}
-
-.slidesjs-pagination li {
-    float: left;
-    margin: 0px 5px;
-    list-style: none;
-    background-color: white;
-    border-radius: 6px;
-}
-
-.slidesjs-pagination li a {
-    display: block;
-    width: 12px;
-    height: 0px;
-    padding-top: 12px;
-    float: left;
-    overflow: hidden;
-    border-radius: 6px;
-}
-
 .slidesjs-pagination li .active {
     background-color: #1798af;
-}
-
-#slideshow img {
-    width: 920px;
-    height: 260px;
 }
 
 /*---BIENVENIDOS---*/
@@ -236,7 +199,7 @@ header #subheader nav ul li a:hover {
   margin-top: 180px;
   box-shadow: 7px 13px 37px #000;
   padding: 20px 30px;
-  border-top: 4px solid #017bab;
+  border-top: 4px  rgba(100, 100, 100, 0.5);
   color: white;
 }
 
@@ -251,7 +214,7 @@ header #subheader nav ul li a:hover {
 
 .controls {
   width: 95%;
-  border: 1px solid #017bab;
+  border: 1px  rgba(100, 100, 100, 0.5);
   margin-bottom: 15px;
   padding: 11px 10px;
   background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
@@ -268,6 +231,8 @@ header #subheader nav ul li a:hover {
   color: white;
   margin-bottom: 16px;
   border-radius: 15px;
+  cursor: pointer;
+
 }
 
 .form-login p{
