@@ -290,7 +290,9 @@ header #subheader nav ul li a:hover {
   text-decoration: underline;
 }
 
-
+.p-pointer{
+cursor: pointer;
+}
 
 
 
