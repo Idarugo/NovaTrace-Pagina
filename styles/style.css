@@ -250,3 +250,76 @@ header #subheader nav ul li a:hover {
 .form-login a:hover {
   text-decoration: underline;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root,
+:root.light {
+  --bg-color: #fff;
+  --text-color: #123;
+}
+
+:root.dark {
+  --bg-color: #504f4f;
+  --text-color: #45ADFE;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif
+}
+
+.toggle-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.theme-btn {
+  width: 90px;
+  height: 90px;
+  padding: 0.1em;
+  border-radius: 10%;
+  background-color: transparent;
+}
+
+.theme-btn img {
+  height: 40%;
+  width: 40%;
+  object-fit: cover;
+}
+
+.theme-btn.light {
+  display: none;
+}
+
+.dark .theme-btn.dark {
+  display: none;
+}
+
+.dark .theme-btn.light {
+  display: block;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #eaeaea90;
+}
+
+footer p {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+  color: #221133;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+

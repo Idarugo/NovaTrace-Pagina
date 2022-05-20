@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./styles/style.css">
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="js/jquery.slides.min.js"></script>
-        <script>
-            $(function () {
-                $("#slideshow").slidesjs();
-            });
-        </script>
-        <title>Mi sitio Web</title>
     </head>
 
     <body>
+
+         
     <div class="contenedor">
             <header>
                 <div id="subheader">
@@ -25,6 +21,15 @@
                             <li><a href="login.html">Iniciar Sesion</a></li>
                             <li><a href="#">Encuesta</a></li>
                             <li><a href="#">Control Laboral</a></li>
+                            
+                            <div class="toggle-container">
+                                <button class="theme-btn light" onclick="setTheme('light')" title="Light mode">
+                                  <img src="https://assets.codepen.io/210284/sun.png" alt="sun">
+                                </button>
+                                <button class="theme-btn dark" onclick="setTheme('dark')" title="Dark mode">
+                                  <img src="https://assets.codepen.io/210284/moon.png" alt="moon">
+                                </button>
+                              </div>
                         </ul>
                     </nav>
                 </div>
@@ -52,4 +57,6 @@
         </section>
      </section>
     </body>
+
+    <script src="./js/cambiarModo.js"></script>
 </html>
