@@ -22,18 +22,16 @@ if (isset($_POST["btnvalida"])) {
     } 
 } 
 
+
 if($validacion == true){ 
      session_start();
     $_SESSION["rut"] = $rut;
     $_SESSION["pas"] = $pas;
-    if($tipo == "Trabajadores"){ 
     echo '<script> window.location.replace("principal.html");  
-    </script>'; 
-    }else{ 
-        echo '<script> window.location.replace("principal.html");  
-    </script>'; 
-    } 
+    </script>';  
 }else{ 
+    echo '<script> window.location.replace("login.php");  
+    </script>'; 
     echo '<h6 style="color:red">Error al validar el usuario y contraseña</h6>'; 
 } 
 } 

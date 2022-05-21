@@ -45,14 +45,17 @@
 
                <section class="form-login">
                 <h5>Formulario Login</h5>
+                <form method="post">
                 <input type="text" class="controls" name="txt_rut" id="txt_rut"  placeholder="Ingrese RUT" >
                 <input class="controls"  name="txt_pas" id="txt_pas" type="password" value="" placeholder="Contraseña">
 
               <div style="text-align: center;">
                 <button  class="buttons" name="btnvalida" type="submit">Ingresar</button>
+                <?php include('control_sesion.php');?>
               </div>  
               
                 <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
+            </form>
               </section>
             </section>
         </section>

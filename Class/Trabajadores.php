@@ -7,7 +7,7 @@ class Trabajadores{
 	public function Trabajadores($idtra,$rut,$pas){
 		$this->idtra = $idtra;
 		$this->rut = $rut;
-		$this->password = $password;
+		$this->pas = $pas;
 	}
 
 	public function getidtra(){
