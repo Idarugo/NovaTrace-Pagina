@@ -322,4 +322,36 @@ footer a {
 }
 
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 10px;
+}
+footer {
+  background-color: #0887b9;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height:70px;
+  margin-left: 0px;
+}
+
+.container-fluid {
+  left: 50px;
+
+}
+
+.detalleindex{
+  text-decoration: none;
+  text-align: center;
+  color: white;
+
+  
+}
+
+
+
 
