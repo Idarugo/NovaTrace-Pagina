@@ -20,7 +20,7 @@
         }
     </style>      
 
-<form action="control_sesion.php" target="_top" method="post">
+
 
        <div class="contenedor">
                 <header>
@@ -39,13 +39,13 @@
                 </header>
 
         </div>
-
+        <form method="post">
         <section id="wrap" class="login">
             <section id="main">
 
                <section class="form-login">
                 <h5>Formulario Login</h5>
-                <form method="post">
+           
                 <input type="text" class="controls" name="txt_rut" id="txt_rut"  placeholder="Ingrese RUT" >
                 <input class="controls"  name="txt_pas" id="txt_pas" type="password" value="" placeholder="Contraseña">
 
@@ -55,7 +55,7 @@
               </div>  
               
                 <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
-            </form>
+             </form>
               </section>
             </section>
         </section>

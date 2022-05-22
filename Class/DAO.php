@@ -1,5 +1,4 @@
 <?php
-require('Encuesta.php');
 require("Trabajadores.php");
 
 class DAO {
@@ -68,7 +67,7 @@ public function ValidarLogin($rut, $pas){
     $this->conexion();
     $lista = array();
     $sql = "SELECT 
-encuesta.id_enc, cabeza.nom_cab as id_cab,respiracion.nom_resp as id_resp,tos.nom_tos as id_tos,musculo.nom_mus as id_mus
+encuesta.id_enc,nombrecliente.nom_clie cabeza.nom_cab as id_cab,respiracion.nom_resp as id_resp,tos.nom_tos as id_tos,musculo.nom_mus as id_mus
 FROM
 encuesta,cabeza,respiracion,tos,musculo
 WHERE
@@ -77,12 +76,13 @@ encuesta.id_cab = cabeza.id_cab && encuesta.id_resp = respiracion.id_resp && enc
     $st = $this->mi->query($sql);
     while ($rs = mysqli_fetch_array($st)) {
       $idEnc = $rs['id_enc'];
+      $nomcli = $rs['nom_clie'];
       $cab = $rs['id_cab'];
       $resp = $rs['id_resp'];
       $tos = $rs['id_tos'];
       $mus = $rs['id_mus'];
 
-      $en  = new Encuesta($idEnc,$cab,$resp,$tos,$mus);
+      $en  = new Encuesta($idEnc,$nomcli,$cab,$resp,$tos,$mus);
       $lista[] = $en;
     }
     $this->desconexion();
