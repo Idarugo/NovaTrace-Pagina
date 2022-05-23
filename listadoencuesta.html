@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="./js/exportTableToExcel.js"></script>
+
+        <script>
+            $(function () {
+                $("#slideshow").slidesjs();
+            });
+        </script>
+        <title>Listado De Encuesta</title>
+    
+    </head>
+    <style>
+        body {
+          background-image:url('./imagen/listadoencuesta.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      </style>   
+
+    <div class="contenedor">
+                <header>
+                    <div id="subheader">
+                        <div id="logotipo">
+                            <p><a href="">NovaTrace</a></p>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Encuesta</a></li>
+                                <li><a href="controllaboral.html">Control Laboral</a></li>
+                                <li><a href="index.html">Cerrar Sesion</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+    </div>
+    
+    <body>
+    <table id="tblData" class="tablaencuesta"  style="margin: 0 auto;" >
+      <tr>
+          <th>Nro</th>
+          <th>Nombre</th>
+          <th>Dolor De Cabeza</th>
+          <th>Dificultad Respiratoria</th>
+          <th>Tos Seca</th>
+          <th>Dolor Muscular</th>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Juan</td>
+          <td>Si</td>
+          <td>No</td>
+          <td>Si</td>
+          <td>Si</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Diego</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Si</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Freddy</td>
+          <td>No</td>
+          <td>Si</td>
+          <td>No</td>
+          <td>Si</td>
+      </tr>
+    </table>
+    </body>
+
+    
+    <br/>
+
+    <div style="text-align: center;">
+      <button class="buttonlistado" onclick="exportTableToExcel('tblData', 'Reporte Encuesta')"> <img src="./imagen/iconodescarga.png" width="13px"> Exportar a Excel</button>
+    </div>  
+
+
+
+
+</html>

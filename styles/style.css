@@ -132,7 +132,7 @@ header #subheader nav ul li a:hover {
         opacity: 0.1;
     }
     35%, 65% {
-        background-image: url(../imagen/banner2.png);
+        background-image: url('../imagen/banner2.png');
         opacity: 1;
     }
     66%, 69% {
@@ -140,7 +140,7 @@ header #subheader nav ul li a:hover {
     }
     70%, 100% {
         opacity: 1;
-        background-image: url(../imagen/banner3.jpg);
+        background-image: url('../imagen/banner3.jpg');
     }
 }
 
@@ -351,6 +351,107 @@ footer {
   font-size: 100%;
   
 }
+
+/*Listado De Encuesta*/
+
+.buttonlistado {
+  width: 15%;
+  height: 30px;
+  background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
+  border: none;
+  color: white;
+  margin-bottom: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+
+}
+
+.tablaencuesta{
+  color: white;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td{
+  padding: 5px;
+}
+
+th{
+  height: 30px;
+}
+
+
+
+
+/*Privacidad*/
+
+.texto-justificado{
+  text-align: justify;
+  }
+
+
+p {
+  text-decoration: none;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 10px;
+}
+
+
+#posicionjustificado {
+  width: 95%;
+  padding: 20px;
+  background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
+  text-align: justify;
+}
+
+
+
+#posicionjustificado article {
+  color: #fff;
+  line-height: 27px;
+}
+
+img.izquierda {
+  float: left;
+  margin-right: 20px;
+}
+
+img.derecha {
+  float: right;
+  margin-left: 8px;
+}
+
+h2 {
+  clear: both;
+}
+
+/*Principal*/
+
+#posicionprincipal {
+  width: 64%;
+  padding: 20px;
+  background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
+  text-align: justify;
+}
+
+#posicionderecha{
+  padding: 20px;
+  background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
+  text-align: justify;
+  right: 50px;
+}
+
+
+
+
+
+
+
+
 
 
 
