@@ -36,18 +36,17 @@
     </header>
 </div>      
 
+<form action="recuperar.php" method="post">
     <section id="wrap">
         <section id="main">
-            
                <section class="form-login">
                 <h5>Recuperar Contraseña</h5>
-                <input type="text" class="controls"id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT" >
-                <input class="controls" type="password" name="contrasena" value="" placeholder="Nueva Contraseña">
+                <input type="email" name="txtcorreo"  class="controls" placeholder="Correo" required class="cajaentradatexto">
+
                <div style="text-align: center;">
-                <button  class="buttons" type="submit">Cambiar Contraseña</button>
-                <script src="./js/validarRut.js"></script>
+                <input class="buttons" type="submit" name="btnrecuperar" value="Enviar" onClick="javascript: return confirm('¿Deseas enviar tu contraseña a tu correo?');">
               </div>
-                <p><a href="login.html">Volver Inicio De Sesion</a></p>
+                <p><a href="login.php">Volver Inicio De Sesion</a></p>
             </section>
         </section>
     </section>

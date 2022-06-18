@@ -1,17 +1,17 @@
 <?php
 class Encuesta{
     private $idEnc;
-    private $nomclie;
+    private $clientes;
 	private $cabeza;
 	private $respiracion;
 	private $tos;
 	private $musculo;
 
 
-	public function Encuesta($idEnc,$nomclie,$cabeza,$respiracion,$tos,$musculo){
+	public function Encuesta($idEnc,$clientes,$cabeza,$respiracion,$tos,$musculo){
 
 		$this->idEnc        = $idEnc;
-        $this->nomclie      = $nomclie;
+        $this->clientes     = $clientes;
 		$this->cabeza       = $cabeza;
 		$this->respiracion  = $respiracion;
 		$this->tos          = $tos;
@@ -22,8 +22,8 @@ class Encuesta{
 		return $this->idEnc;
 	}
 
-    public function getnomClien(){
-		return $this->nombrecliente;
+    public function getidClientes(){
+		return $this->clientes;
 	}
 	
 	public function getidCabeza(){

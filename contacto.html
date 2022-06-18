@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contacto</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles/estilocontacto.css">
+
+        <script>
+            $(function () {
+                $("#slideshow").slidesjs();
+            });
+        </script>
+    </head>
+
+    <style>
+        body {
+          background-image:url('./imagen/contacto.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+    </style> 
+    
+    <div class="contenedor">
+         <header>
+             <div id="subheader">
+                 <div id="logotipo">
+                     <p><a href="">NovaTrace</a></p>
+                 </div>
+                 <nav>
+                     <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quiensomos.html">Quienes Somos</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="covid.html">Covid</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="login.php">Iniciar Sesion</a></li>
+                     </ul>
+                 </nav>
+             </div>
+         </header>
+
+         
+
+         <form method="post">
+            <section id="wrap" class="login">
+                <section id="main">
+    
+                   <section class="form-login">
+                    <h5>CONTACTO</h5>
+                    <h2>Mantengamos la comunicación. Para lo que necesites tenemos a tu disposición nuestros
+                        canales de contacto: envíanos un mensaje, llámanos o escríbenos.
+                    </h2>
+               
+                    <td><label><FONT COLOR="FFFFFF">Nombre</label></td></FONT>
+                    <input class="controls"  name="nombreuser"  type="text"  placeholder="Nombre Y Apellido">
+
+                    <td><label><FONT COLOR="FFFFFF">Correo electronico</label></td></FONT>
+                    <input type="text" class="controls" name="emailuser"  placeholder="example@mail.com" >
+
+                    <td><label><FONT COLOR="FFFFFF">Telefono</label></td></FONT>
+                    <input type="text" class="controls" name="telefono"  placeholder="Telefono" >
+
+                    <td><label><FONT COLOR="FFFFFF">Escriba Aqui Su Mensaje</label></td></FONT>
+                    <input type="text" class="controls" name="mensaje"  placeholder="Mensaje" >
+
+                  <div style="text-align: center;">
+                    <button  class="buttons" name="enviar" type="submit">ENVIAR</button>
+                    <?php include("conexioncontacto.php");?>
+                </div>  
+                  </section>
+                </section>
+            </section>
+          </form>
+
+
+
+         <body>
+  
+            <form method="post">
+                <section id="wrap" class="login">                    
+                <h5>CONTACTO</h5>
+            <h2>Mantengamos la comunicación. Para lo que necesites tenemos a tu disposición nuestros canales de contacto: envíanos un mensaje, llámanos o escríbenos.</h2>
+            <br/>
+            
+            <tr>
+            <td><label><FONT COLOR="FFFFFF">Nombre</label></td></FONT>
+            <td><input type="text" name="nombreuser" placeholder="Nombres" /></td>
+            </tr>
+    
+            <tr>
+            <td><label><FONT COLOR="FFFFFF">Correo electronico</label></td></FONT>
+            <td><input type="text" name="emailuser" placeholder="example@mail.com" /></td>
+            </tr>
+    
+            <tr>
+            <td><label><FONT COLOR="FFFFFF">Telefono</label></td></FONT>
+            <td><input type="text" name="telefono" placeholder="Telefono" /></td>
+            </tr>
+    
+            <tr>
+            <td><label><FONT COLOR="FFFFFF">Escriba Aqui Su Mensaje</label></td></FONT>
+            <td><input type="text" name="mensaje" placeholder="Mensaje" /></td>
+            </tr>
+    
+            <tr>
+            <td><label><input type="submit" name="enviar" value="ENVIAR"></input></label></td>
+            </tr>
+            
+            <?php
+            include("conexioncontacto.php");
+            ?>
+        </section>
+        </form>
+        </body>
+
+    </div>
+</html>

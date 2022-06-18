@@ -363,12 +363,10 @@ footer {
   margin-bottom: 16px;
   border-radius: 15px;
   cursor: pointer;
-
 }
 
 .tablaencuesta{
   color: white;
-  border: 1px solid black;
   padding: 5px;
   background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
   border-collapse: collapse;
@@ -381,6 +379,13 @@ td{
 
 th{
   height: 30px;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
 }
 
 
@@ -404,7 +409,7 @@ p {
 #posicionjustificado {
   width: 95%;
   padding: 20px;
-  background-color: rgba(100, 100, 100, 0.5); /*traspatencia*/
+  background-color: #64646480; /*traspatencia*/
   text-align: justify;
 }
 
@@ -444,6 +449,63 @@ h2 {
   text-align: justify;
   right: 50px;
 }
+
+
+/*Perfin De Usuario*/
+.iconoperfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 10%;
+  position: relative;
+  top: -20px;
+  left: calc(50% - 50px);
+}
+
+
+/*foto quien somo*/
+.foto1 {
+padding: 10px; 
+margin: 5px; 
+float: left; 
+width: 40%; 
+}
+
+
+.foto2 {
+  padding: 5px; 
+  margin: 5px; 
+  float: right; 
+  width: 20%; 
+  }
+
+p.mas-grande {
+  font-size: x-large;
+  text-align: center;
+  color: #2E69A1;
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked + span:after {    
+  content: "✔"; /* el valor de la propiedad content también puede ser cualquier imagen, sólo tendríamos que pasarle la ruta de la imagen*/
+      position: absolute;
+      text-indent: 2px;
+      top: -1px;
+      left: 2px;
+      color: red;
+  }
+
+  #Empresas {
+    width: 450px;
+    margin: auto;
+    background: rgb(0, 0, 0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+  }
+
+
+
 
 
 

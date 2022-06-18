@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script>
+            $(function () {
+                $("#slideshow").slidesjs();
+            });
+        </script>
+        <title>Iniciar Seccion</title>
+    </head>
+
+    <style>
+        body {
+          background-image:url('./imagen/modificarcontraseña.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      </style> 
+
+<div class="contenedor">
+    <header>
+        <div id="subheader">
+            <div id="logotipo">
+                <p><a href="">NovaTrace</a></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="principal.html">Ventana Principal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>      
+
+<form action="recuperar.php" method="post">
+    <section id="wrap">
+        <section id="main">
+               <section class="form-login">
+                <h5>Modificar Contraseña</h5>
+                <input class="controls"  name="txt_pas" id="txt_pas" type="password" value="" placeholder="Nueva Contraseña">
+                <input class="controls"  name="txt_pas" id="txt_pas" type="password" value="" placeholder="Confirmar Contraseña">
+
+               <div style="text-align: center;">
+                <input href="login.html" class="buttons" type="submit" name="btnrecuperar" value="Modificar" onClick="javascript: return confirm('¿Deseas modificar tu contraseña?');">
+
+              </div>
+                <p><a href="principal.html">Volver Principal</a></p>
+            </section>
+        </section>
+    </section>
+</html>
