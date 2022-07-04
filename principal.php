@@ -8,7 +8,7 @@
                 $("#slideshow").slidesjs();
             });
         </script>
-        <title>Iniciar Seccion</title>
+        <title>Principal</title>
     
     </head>
     <style>
@@ -17,7 +17,29 @@
           background-repeat: no-repeat;
           background-size: cover;
         }
-      </style>      
+      </style>  
+      
+      
+      <?php
+      session_start();
+      if (!isset($_SESSION["idad"])) {
+          header("Location: principal.php");
+      }
+      $idad = $_SESSION["idad"];
+      require 'Class/DAO.php'; 
+      $d = new DAO();
+      $lista = array();
+      $lista = $d ->listarAdministrador($idad);
+      $nombre;$rut;$email;$tel;
+      for ($i=0; $i < count($lista); $i++) { 
+              $m = $lista[$i];
+              $nombre= $m->getNom();
+              $rut = $m->getrut();
+              $email = $m->getemail();
+              $tel = $m->gettel();
+      }
+          
+      ?>
 
        <div class="contenedor">
                 <header>
@@ -27,9 +49,9 @@
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="listadoencuesta.html">Encuesta</a></li>
-                                <li><a href="controllaboral.html">Control Laboral</a></li>
-                                <li><a href="perfil.html">Perfil</a></li>
+                                <li><a href="listadoencuesta.php">Listados</a></li>
+                                <li><a href="registrarUsuario.php">Registro</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
                                 <li><a href="index.html">Cerrar Sesion</a></li>
                             </ul>
                         </nav>
@@ -41,7 +63,7 @@
         <section id="posicionprincipal">
             <article>
                 <div style="text-align: left">
-                    <h1 style="color: aliceblue;">Bienvenido Usuario</h1>
+                    <h1 style="color: aliceblue;">Bienvenido  <?php echo $nombre; ?> </h1>
                 </div>
                 <br/>
                 <div style="text-align: left">

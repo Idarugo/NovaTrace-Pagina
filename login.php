@@ -18,7 +18,8 @@
           background-repeat: no-repeat;
           background-size: cover;
         }
-    </style>      
+    </style>   
+    
 
        <div class="contenedor">
                 <header>
@@ -42,20 +43,19 @@
                <section class="form-login">
                 <h5>Login</h5>
            
-                <input type="text" class="controls" name="txt_rut" id="txt_rut"  maxlength="12" name="cliente" id="cliente" maxlength="12" onkeyup="formatCliente(this)"  placeholder="Ingrese RUT" >        
+                    <input type="text" class="controls" name="txt_rut" id="txt_rut"  maxlength="12" name="cliente" id="cliente" maxlength="12" onkeyup="formatCliente(this)"  placeholder="Ingrese RUT" >        
                     <script type="text/javascript">
                     function formatCliente(cliente)
                     {cliente.value=cliente.value.replace(/[.-]/g, '')
                     .replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1.$2.$3-$4')}
-                    </script>     
-                           
-                <input class="controls"  name="txt_pas" id="txt_pas" type="password" value="" placeholder="Contraseña">
+                    </script>                 
+                    <input class="controls"  name="txt_pas" id="txt_pas" type="password" value="" placeholder="Contraseña">
 
               <div style="text-align: center;">
                 <button  class="buttons" name="btnvalida" type="submit">Ingresar</button>
                 <?php include('control_sesion.php');?>
               </div>  
-                <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
+                <p><a href="recuperar.php">¿Olvidastes tu Contraseña?</a></p>
                 <p><a href="registrarAdministrador.php">¿No tienes Cuenta? Registrate</a></p>
               </section>
             </section>

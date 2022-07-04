@@ -505,6 +505,11 @@ input[type="checkbox"]:checked + span:after {
   }
 
 
+  .datousuario{
+    padding-top: 100%;
+  }
+
+
 
 
 

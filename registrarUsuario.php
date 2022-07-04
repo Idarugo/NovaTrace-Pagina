@@ -24,12 +24,12 @@
          <header>
              <div id="subheader">
                  <div id="logotipo">
-                     <p><a href="">NovaTrace</a></p>
+                     <p><a href="principal.php">NovaTrace</a></p>
                  </div>
                  <nav>
                      <ul>
-                     <li><a href="listadoencuesta.php">Encuesta</a></li>
-                     <li><a href="principal.html">Ventana Principal</a></li>
+                     <li><a href="modificarEncuesta.php">Encuesta</a></li>
+                     <li><a href="principal.php">Ventana Principal</a></li>
                      </ul>
                  </nav>
              </div>
@@ -45,7 +45,7 @@
             <td><input type="text" name="Nombre" placeholder="Nombre Y Apellido" /></td>
             </tr>
             
-            <tr>
+                  <tr>
             <td><label><FONT COLOR="FFFFFF">Rut</label></td></FONT>
             <td><input type="text" name="Rut"  class="inputs" maxlength="12" name="cliente" id="cliente" maxlength="12" onkeyup="formatCliente(this)" placeholder="XX-XXX-XXX-X" /></td>
 
@@ -56,7 +56,6 @@
             </script>
             </tr>
     
-    
             <tr>
             <td><label><FONT COLOR="FFFFFF">Correo electronico</label></td></FONT>
             <td><input type="text" name="Email" placeholder="example@mail.com" /></td>
@@ -64,7 +63,7 @@
     
             <tr>
             <td><label><FONT COLOR="FFFFFF">Telefono</label></td></FONT>
-            <td><input type="text" name="Telefono" placeholder="Telefono" /></td>
+            <td><input type="text" name="Telefono" maxlength="9"  placeholder="Telefono" /></td>
             </tr>
         
             <tr>

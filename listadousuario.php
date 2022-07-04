@@ -10,7 +10,7 @@
                 $("#slideshow").slidesjs();
             });
         </script>
-        <title>Listado De Encuesta</title>
+        <title>Listado De Usuarios</title>
     
     </head>
     <style>
@@ -22,18 +22,7 @@
       </style>   
       
       
-                    <?php
-  require 'Class/DAO.php';
-  if (isset($_GET["id_eli"])) {
-    $rut = "";
-    $rut = $_GET["rut"];
-    $d = new DAO();
-    $id_eli = $_GET["id_eli"];
-    $msg = $d->eliminarRegistro($id_eli, "id_enc", "encuesta", $rut);
-    echo "<script language='javascript'>alert('$msg');</script>";
-  }
 
-  ?>
 
     <div class="contenedor">
                 <header>
@@ -43,8 +32,8 @@
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="registrarUsuario.php">Registrar Trabajador</a></li>
-                                <li><a href="principal.html">Ventana Principal</a></li>
+                                <li><a href="listadoencuesta.php">Listado Encuesta</a></li>
+                                <li><a href="principal.php">Ventana Principal</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -52,45 +41,44 @@
     </div>
     
     <body>
-    <table id="tblData" class="tablaencuesta"  style="margin: 0 auto;">
+    <table id="tblData" class="tablaencuesta"  style="margin: 0 auto;margin-bottom:400px">
       <tr>
-          <th>Nro</th>
-          <th>Nombre</th>
-          <th>Dolor De Cabeza</th>
-          <th>Dificultad Respiratoria</th>
-          <th>Tos Seca</th>
-          <th>Dolor Muscular</th>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>RUT</th>
+        <th>EMAIL</th>
+        <th>TELEFONO</th>
+        <th>Eliminar</th>
       </tr>
        <?php
-      if (isset($_GET["orden"])) {
-        $con  = "order by " . $_GET["orden"] . " ASC";
-      }
-        if (empty($idEnc)) {
+
+          session_start();
+          require 'Class/DAO.php'; 
           $d = new DAO();
-          $lista = $d->Encuesta();
+          $lista = $d->listadoUsuario($_SESSION["idemp"]);
           for ($i = 0; $i < count($lista); $i++) {
             $en = $lista[$i];
             echo "<tr>";
-            echo "<td>" . $en->getidEnc() . "</td>";
-            echo "<td>" . $en->getidClientes() . "</td>";
-            echo "<td>" . $en->getidCabeza() . "</td>";
-            echo "<td>" . $en->getidRespiracion() . "</td>";
-            echo "<td>" . $en->getidTos() . "</td>";
-            echo "<td>" . $en->getidMusculo() . "</td>";
+            echo "<td>" . $en->getidUsu()  . "</td>";
+            echo "<td>" . $en->getNom()  . "</td>";
+            echo "<td>" . $en->getRut() . "</td>";
+            echo "<td>" . $en->getEmail() . "</td>";
+            echo "<td>" . $en->getTel() . "</td>";
+            echo "<td><a href='listadousuario.php?id_eli=" . $en->getidUsu() . "&id_usu=" . "'> ELIMINAR</a></td>";
             echo "</tr>";
           }
-        } 
-      
       ?>
 
     </table>
-    </body>
-
-    
+ 
     <br/>
 
     <div style="text-align: center;">
       <button class="buttonlistado" onclick="exportTableToExcel('tblData', 'Reporte Encuesta')"> <img src="./imagen/iconodescarga.png" width="13px"> Exportar a Excel</button>
-    </div>  
-
+    </div>
+    <?php
+    if(strlen($_GET['id_eli']) > 0 ){
+        echo $_GET['id_eli'];
+    }
+    ?>
 </html>

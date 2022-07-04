@@ -10,7 +10,7 @@
 	
 	if(isset($_POST['enviar'])){//inicio if post
 		session_start();
-		$idad  = $_SESSION["idad"]; 
+		$idad = $_SESSION["idad"]; 
 		$nomemp = $_POST['NomEmpresa'];
     
  

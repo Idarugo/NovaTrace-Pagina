@@ -1,23 +1,21 @@
 
 <?php 
-if (isset($_POST["btnvalida"])) {
+if (isset($_POST["btnrecuperar"])) {
    $validacion = false; 
-        if(strlen($_POST['txt_rut']) >= 1 && strlen($_POST['txt_pas'] >= 1)){ 
+   if(strlen($_POST['txt_cor']) >= 1 ){ 
         
             require 'Class/DAO.php'; 
             $d = new DAO(); 
         
-            $txt_rut = trim($_POST['txt_rut']); 
-            $txt_pas = trim($_POST['txt_pas']); 
+            $txt_cor = trim($_POST['txt_cor']); 
             
             $lista = $d->ListarAdministradores(); 
-            $rut = ""; $pas = "";
+            $email = "";
         
             for ($i=0; $i < count($lista); $i++) {  
                 $a = $lista[$i]; 
-                $rut = $a->getRut(); 
-                $pas = $a->getPassword(); 
-                if($rut == $txt_rut and $pas == $txt_pas){ //INICIO IF VALIDACION BOOLEAN
+                $email = $a->getEmail(); 
+                if($email == $txt_cor){ //INICIO IF VALIDACION BOOLEAN
                     $validacion = true; 
                     $idad= $a->getidadm();
                 } // FIN IF VALIDACION BOOL
@@ -30,13 +28,12 @@ if (isset($_POST["btnvalida"])) {
             $id_empresa = $d->buscarId($idad);
             $_SESSION["idemp"] = $id_empresa;
             $_SESSION["idad"] = $idad;
-            $_SESSION["rut"] = $rut;
-            $_SESSION["pas"] = $pas;
+            $_SESSION["ema"] = $email;
 
-            echo '<script> window.location.replace("principal.php");  
+            echo '<script> window.location.replace("recuperarContraseña.php");  
             </script>';  
         }else{ 
-            echo '<h6 style="color:white">Error al Validar el Usuario y Contraseña</h6>'; 
+            echo '<h6 style="color:white">Error al Validar </h6>'; 
             
 
         }//FIN VALIDACION BOOLEAN PARA NEXT PAGE 

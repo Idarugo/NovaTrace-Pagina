@@ -1,6 +1,8 @@
 <?php
 require('Encuesta.php');
 require("Administradores.php");
+require("Usuario.php");
+
 
 class DAO {
   private $mi;
@@ -21,7 +23,7 @@ class DAO {
     $this->conexion();
     $lista = array();
     $sql = "select * from administrador; ";
-    $st = $this->mi->querid_admy($sql);
+    $st = $this->mi->query($sql);
     while ($rs = mysqli_fetch_array($st)) {
       $i   = $rs['id_adm'];
       $n   = $rs['nom_adm'];
@@ -36,14 +38,28 @@ class DAO {
     return $lista;
   }
 
-   public function buscarId($id_admin){ 
-    $sql = "Select id_emp from empresa WHERE id_adm = $id_admin"; 
-                 $this->conexion(); 
-                 $st = $this->mi->query($sql); 
-                 $valor = mysqli_fetch_array($st); 
-                 $this->desconexion(); 
-                 return $valor[0]; 
-}
+     public function buscarId($id_admin)
+      {
+        $sql = "Select id_emp from empresa WHERE id_adm = $id_admin";
+        $this->conexion();
+        $st = $this->mi->query($sql);
+        $valor = mysqli_fetch_array($st);
+        $this->desconexion();
+        return $valor[0];
+      }
+      
+      
+       public function ModificarContraseñaAdm($id_admin,$pas)
+     {
+       $sql = "update administrador set pas_adm='$pas' where id_adm=$id_admin";
+       $this->conexion();
+       $st = $this->mi->query($sql);
+       $valor = mysqli_fetch_array($st);
+       $this->desconexion();
+       return $valor[0];
+     }
+      
+      
 
 
   /*
@@ -121,7 +137,25 @@ trabajadores.id_tra";
     return $lista;
   }
 
+public function listarAdministrador($id)
+  {
 
+    $lista = array();
+    $sql = "SELECT nom_adm, rut_adm, email_adm, tel_adm FROM administrador WHERE id_adm = $id";
+    $this->conexion();
+    $st = $this->mi->query($sql);
+    while ($rs = mysqli_fetch_array($st)) {
+      $nom = $rs['nom_adm'];
+      $rut = $rs['rut_adm'];
+      $email = $rs['email_adm'];
+      $tel = $rs['tel_adm'];
+    
+      $en  = new Administradores(0,$nom,$rut,$email,$tel,0);
+      $lista[] = $en;
+    }
+    $this->desconexion();
+    return $lista;
+  }
 
 
 
@@ -145,6 +179,100 @@ encuesta.id_clie = clientes.id_clie && encuesta.id_cab = cabeza.id_cab && encues
       $mus = $rs['id_mus'];
 
       $en  = new Encuesta($idEnc,$idclie,$cab,$resp,$tos,$mus);
+      $lista[] = $en;
+    }
+    $this->desconexion();
+    return $lista;
+  }
+  
+  public function listarEncuesta($id_adm){
+      $sql = "SELECT e.id_enc, e.fec_enc, e.id_usu, e.id_cab, e.id_resp, e.id_tos, e.id_mus FROM encuesta e, usuario u, empresa em, administrador a WHERE e.id_usu = u.id_usu AND u.id_emp = em.id_emp AND em.id_adm = a.id_adm AND a.id_adm=$id_adm";
+      $lista = array();
+      $this->conexion();
+      $st = $this->mi->query($sql);
+      while($rs = mysqli_fetch_array($st)){
+          $id_enc = $rs['id_enc'];
+          $fecha = $rs['fec_enc'];
+          $id_usu = $rs['id_usu'];
+          $id_cab = $rs['id_cab'];
+          $id_resp = $rs['id_resp'];
+          $id_tos = $rs['id_tos'];
+          $id_mus = $rs['id_mus'];
+          $en = new Encuesta($id_enc,$fecha,$id_usu,$id_cab,$id_resp,$id_tos,$id_mus);
+          $lista[] = $en;
+      }
+    $this->desconexion();
+    return $lista;
+  }
+  
+   public function eliminarEncuesta($id_eli, $campo, $tabla, $id_enc)
+  {
+    $msg = "";
+    $this->conexion();
+    $sql = "Delete from $tabla where $campo = $id_eli";
+    $ejecutar = $this->mi->query($sql);
+    if ($this->mi->affected_rows) {
+      $msg = "Registro de ID = $id_eli con Encuesta = $id_enc Eliminado Correctamente!!!";
+    } else {
+      $msg = "Error Al Intentar Eliminar El Registro $id_eli !!!";
+    }
+    return $msg;
+  }
+  
+  public function listadoUsuario($id){
+    $sql = "SELECT id_usu, nom_usu, rut_usu,email_usu,tel_usu FROM usuario WHERE id_emp=$id";
+      $lista = array();
+      $this->conexion();
+      $st = $this->mi->query($sql);
+      while($rs = mysqli_fetch_array($st)){
+      $id_usu = $rs['id_usu'];
+      $nom    = $rs['nom_usu'];
+      $rut    = $rs['rut_usu'];
+      $email  = $rs['email_usu'];
+      $tel    = $rs['tel_usu'];
+      $en  = new Usuario($id_usu,0,$nom,$rut,$email,$tel,0);
+        $lista[] = $en;
+      }
+    $this->desconexion();
+    return $lista;
+  }
+  
+   
+    public function eliminarUsuario($id_eli, $campo, $tabla, $id_usu)
+  {
+    $msg = "";
+    $this->conexion();
+    $sql = "Delete from $tabla where $campo = $id_eli";
+    $ejecutar = $this->mi->query($sql);
+    if ($this->mi->affected_rows) {
+      $msg = "Registro de ID = $id_eli con ID = $id_usu Eliminado Correctamente!!!";
+    } else {
+      $msg = "Error Al Intentar Eliminar El Registro $id_eli !!!";
+    }
+    return $msg;
+  }
+
+ public function VerificiarIdUsuario($id, $id_a){
+     $sql = "SELECT COUNT(u.nom_usu) FROM usuario u, empresa e, administrador a WHERE e.id_emp = u.id_emp AND a.id_adm = e.id_adm AND a.id_adm = $id_a AND u.id_usu=$id";
+     $this->conexion();
+     $st = $this->mi->query($sql);
+     $valor = mysqli_fetch_array($st);
+     $this->desconexion();
+     return $valor[0];
+ }
+ 
+  public function listarUsuario($id,$id_a)
+  {
+    $lista = array();
+    $sql = "SELECT u.nom_usu, u.rut_usu, u.email_usu, u.tel_usu FROM usuario u, empresa e, administrador a WHERE u.id_usu = $id AND e.id_emp = u.id_emp AND a.id_adm = e.id_adm AND a.id_adm = $id_a";
+    $this->conexion();
+    $st = $this->mi->query($sql);
+    while ($rs = mysqli_fetch_array($st)) {
+      $nom = $rs['nom_usu'];
+      $rut = $rs['rut_usu'];
+      $email = $rs['email_usu'];
+      $tel = $rs['tel_usu'];
+      $en  = new Usuario(0,0,$nom,$rut,$email,$tel,0,0);
       $lista[] = $en;
     }
     $this->desconexion();

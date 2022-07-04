@@ -44,9 +44,9 @@
             <td><input type="text" name="Nombre" placeholder="Nombre Y Apellido" /></td>
             </tr>
 
-             <tr>
+              <tr>
             <td><label><FONT COLOR="FFFFFF">Rut</label></td></FONT>
-            <td><input type="text" name="Rut"  class="inputs" maxlength="12" name="cliente" id="cliente" maxlength="12" onkeyup="formatCliente(this)"laceholder="XX-XXX-XXX-X" /></td>
+            <td><input type="text" name="Rut"  class="inputs" maxlength="12" name="cliente" id="cliente" maxlength="12" onkeyup="formatCliente(this)"placeholder="XX-XXX-XXX-X" /></td>
 
             <script type="text/javascript">
             function formatCliente(cliente)
@@ -62,7 +62,7 @@
     
             <tr>
             <td><label><FONT COLOR="FFFFFF">Telefono</label></td></FONT>
-            <td><input type="text" name="Telefono" placeholder="Telefono" /></td>
+            <td><input type="text" name="Telefono" maxlength="9"  placeholder="Telefono" /></td>
             </tr>
     
             <tr>

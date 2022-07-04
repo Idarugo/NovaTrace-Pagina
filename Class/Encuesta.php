@@ -1,17 +1,19 @@
 <?php
 class Encuesta{
     private $idEnc;
-    private $clientes;
+	private $fecha;
+	private $usuario;
 	private $cabeza;
 	private $respiracion;
 	private $tos;
 	private $musculo;
 
 
-	public function Encuesta($idEnc,$clientes,$cabeza,$respiracion,$tos,$musculo){
+	public function Encuesta($idEnc,$fecha,$usuario,$cabeza,$respiracion,$tos,$musculo){
 
 		$this->idEnc        = $idEnc;
-        $this->clientes     = $clientes;
+        $this->fecha        = $fecha;
+		$this->usuario      = $usuario;
 		$this->cabeza       = $cabeza;
 		$this->respiracion  = $respiracion;
 		$this->tos          = $tos;
@@ -22,8 +24,12 @@ class Encuesta{
 		return $this->idEnc;
 	}
 
-    public function getidClientes(){
-		return $this->clientes;
+	public function getfecha(){
+		return $this->fecha;
+	}
+
+    public function getidUsuario(){
+		return $this->usuario;
 	}
 	
 	public function getidCabeza(){

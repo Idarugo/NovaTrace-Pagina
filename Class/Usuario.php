@@ -1,22 +1,30 @@
 <?php
-class Trabajadores{
-	private $idtra;
+class Usuario{
+	private $id;
+	private $idemp;
 	private $nom;
 	private $rut;
 	private $ema;
 	private $tel;
 	private $pas;
 
-	public function Trabajadores($idtra,$nom,$rut,$ema,$pas){
-		$this->idtra = $idtra;
+
+	public function Usuario($id,$idemp,$nom,$rut,$ema,$tel,$pas){
+		$this->id = $id;
+		$this->idemp = $idemp;
 		$this->nom = $nom;
 		$this->rut = $rut;
 		$this->ema = $ema;
+		$this->tel = $tel;
 		$this->pas = $pas;
 	}
 
-	public function getidtra(){
-		return $this->idtra;
+	public function getidUsu(){
+		return $this->id;
+	}
+
+	public function getidEmp(){
+		return $this->idemp;
 	}
 
 	public function getNom(){
@@ -29,6 +37,10 @@ class Trabajadores{
 
 	public function getEmail(){
 		return $this->ema;
+	}
+
+	public function getTel(){
+		return $this->tel;
 	}
 
 	public function getPassword(){

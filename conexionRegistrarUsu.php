@@ -15,12 +15,12 @@
     $rut     = $_POST['Rut'];
 	$email   = $_POST['Email'];
 	$tel     = $_POST['Telefono'];
-    $pas     = $_POST['Password'];
+    $pas     = $_POST['txt_pas'];
 
     
 	if( strlen($idemp) >= 1 && strlen($nom) >= 1 && strlen($rut) >= 1 && strlen($email) >= 1 && strlen($tel) >= 1  && strlen($pas) >=  1){//validacion
 
-	$sql = "INSERT INTO usuario(id_usu, id_emp ,nom_usu, rut_usu, email_usu, tel_usu,pas_usu) VALUES (NULL,$idemp,'$nom','$rut','$email',$tel,$pas);";
+	$sql = "INSERT INTO usuario(id_usu, id_emp ,nom_usu, rut_usu, email_usu, tel_usu,pas_usu) VALUES (NULL,$idemp,'$nom','$rut','$email',$tel,'$pas');";
 	
 	$resultado = mysqli_query($con,$sql);
 	if($resultado){//iniicio resultado

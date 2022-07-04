@@ -17,7 +17,7 @@
  
 	if(strlen($nom) >= 1 && strlen($rut) >= 1 && strlen($email) >= 1 && strlen($tel) >= 1 && strlen($pas) >=  1){//validacion
 
-	$sql = "INSERT INTO administrador(id_adm, nom_adm, rut_adm, email_adm, tel_adm,pas_adm) VALUES (NULL,'$nom','$rut','$email',$tel,$pas);";
+	$sql = "INSERT INTO administrador(id_adm, nom_adm, rut_adm, email_adm, tel_adm,pas_adm) VALUES (NULL,'$nom','$rut','$email',$tel,'$pas');";
 	
 	$resultado = mysqli_query($con,$sql);
 	if($resultado){//iniicio resultado

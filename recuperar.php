@@ -8,7 +8,7 @@
                 $("#slideshow").slidesjs();
             });
         </script>
-        <title>Iniciar Seccion</title>
+        <title>Recuperar Contraseña</title>
     </head>
 
     <style>
@@ -27,8 +27,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Encuesta</a></li>
-                    <li><a href="#">Control Laboral</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="registrarAdministrador.php">Registrate</a></li>
                     <li><a href="index.html">Cerrar Sesion</a></li>
                 </ul>
             </nav>
@@ -41,10 +41,11 @@
         <section id="main">
                <section class="form-login">
                 <h5>Recuperar Contraseña</h5>
-                <input type="email" name="txtcorreo"  class="controls" placeholder="Correo" required class="cajaentradatexto">
+                <input type="email" class="controls" name="txt_cor" id="txt_cor" placeholder="Correo" >        
 
-               <div style="text-align: center;">
-                <input class="buttons" type="submit" name="btnrecuperar" value="Enviar" onClick="javascript: return confirm('¿Deseas enviar tu contraseña a tu correo?');">
+                <div style="text-align: center;">
+                <button  class="buttons" name="btnrecuperar" type="submit">Recuperar Contraseña</button>
+                <?php include('control_correo.php');?>
               </div>
                 <p><a href="login.php">Volver Inicio De Sesion</a></p>
             </section>
