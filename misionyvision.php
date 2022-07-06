@@ -27,8 +27,8 @@
                  </div>
                  <nav>
                      <ul>
-                        <li><a href="privacidad.html">Privacidad</a></li>
-                        <li><a href="index.html">Volver Al Inicio</a></li>
+                        <li><a href="privacidad.php">Privacidad</a></li>
+                        <li><a href="index.php">Volver Al Inicio</a></li>
                      </ul>
                  </nav>
              </div>

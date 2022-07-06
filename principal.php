@@ -52,7 +52,7 @@
                                 <li><a href="listadoencuesta.php">Listados</a></li>
                                 <li><a href="registrarUsuario.php">Registro</a></li>
                                 <li><a href="perfil.php">Perfil</a></li>
-                                <li><a href="index.html">Cerrar Sesion</a></li>
+                                <li><a href="index.php">Cerrar Sesion</a></li>
                             </ul>
                         </nav>
                     </div>

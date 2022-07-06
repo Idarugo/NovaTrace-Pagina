@@ -29,7 +29,7 @@
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="index.html">Volver Al Inicio</a></li>
+                                <li><a href="index.php">Volver Al Inicio</a></li>
                             </ul>
                         </nav>
                     </div>

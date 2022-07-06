@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="registrarAdministrador.php">Registrate</a></li>
-                    <li><a href="index.html">Cerrar Sesion</a></li>
+                    <li><a href="index.php">Cerrar Sesion</a></li>
                 </ul>
             </nav>
         </div>

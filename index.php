@@ -20,10 +20,10 @@
                     <nav>
                         <ul>
                             
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="quiensomos.html">Quienes Somos</a></li>
-                            <li><a href="servicios.html">Servicios</a></li>
-                            <li><a href="covid.html">Covid</a></li>
+                            <li><a href="index.php">Inicio</a></li>
+                            <li><a href="quiensomos.php">Quienes Somos</a></li>
+                            <li><a href="servicios.php">Servicios</a></li>
+                            <li><a href="covid.php">Covid</a></li>
                             <li><a href="contacto.php">Contacto</a></li>
                             <li><a href="login.php">Iniciar Sesion</a></li>
 
