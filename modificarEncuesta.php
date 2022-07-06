@@ -66,7 +66,7 @@
             </tr>
             
             <?php
-            include("conexionRegistrarUsu.php");
+            include("conexionRegEncuesta.php");
             ?>
         </section>
         </form>
