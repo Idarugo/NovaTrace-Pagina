@@ -69,9 +69,9 @@
 
             <nav>
             <ul class="detalleindex">
-            <a href="privacidad.html">Privacidad</a>
+            <a href="privacidad.php">Privacidad</a>
             <a href="">|</a>
-            <a href="misionyvision.html">Mision Y Vision</a>
+            <a href="misionyvision.php">Mision Y Vision</a>
             </ul>
             </nav>
 
